@@ -78,9 +78,9 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element="Esto es la Home" />
+          {/*           <Route path="/" element="Esto es la Home" /> */}
           <Route
-            path="/ammo"
+            path="/"
             element={
               <MainPageList
                 title={"AMMO"}

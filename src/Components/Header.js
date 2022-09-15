@@ -19,40 +19,18 @@ export const Header = () => {
         }}
       ></article>
       <nav id="navigation" className={active ? "active" : ""} onScroll={null}>
-        <Link to="/ammo" onClick={handleClick}>
-          Ammo
-        </Link>
-        <Link to="/armors" onClick={handleClick}>
-          Armors
-        </Link>
-        <Link to="/ashes" onClick={handleClick}>
-          Ashes
-        </Link>
-        <Link to="/bosses" onClick={handleClick}>
-          Bosses
-        </Link>
+        <Link to="/ammo">Ammo</Link>
+        <Link to="/armors">Armors</Link>
+        <Link to="/ashes">Ashes</Link>
+        <Link to="/bosses">Bosses</Link>
 
-        <Link to="/spells" onClick={handleClick}>
-          Spells
-        </Link>
-        <Link to="/items" onClick={handleClick}>
-          Items
-        </Link>
-        <Link to="/locations" onClick={handleClick}>
-          Locations
-        </Link>
-        <Link to="/npcs" onClick={handleClick}>
-          NPCs
-        </Link>
-        <Link to="/spirits" onClick={handleClick}>
-          Spirits
-        </Link>
-        <Link to="/talismans" onClick={handleClick}>
-          Talismans
-        </Link>
-        <Link to="/weapons" onClick={handleClick}>
-          Weapons
-        </Link>
+        <Link to="/spells">Spells</Link>
+        <Link to="/items">Items</Link>
+        <Link to="/locations">Locations</Link>
+        <Link to="/npcs">NPCs</Link>
+        <Link to="/spirits">Spirits</Link>
+        <Link to="/talismans">Talismans</Link>
+        <Link to="/weapons">Weapons</Link>
       </nav>
     </header>
   );
