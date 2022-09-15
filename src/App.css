@@ -1,38 +1,266 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+  --MENUCOLOR: #e7c55e;
+  --H1COLOR: #c2c2c2a8;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+header.header {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+header.header h1 {
+  color: var(--MENUCOLOR);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes youdied {
+  0% {
+    opacity: 0;
   }
 }
+section.body-notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.body-notfound h1 {
+  font-size: 20rem;
+  animation: youdied 2s ease-in;
+  color: rgb(82, 2, 5);
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header.header nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+header.header nav a {
+  font-weight: bold;
+  color: var(--MENUCOLOR);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 15%;
+  background: linear-gradient(
+    to right,
+    rgb(48, 46, 38, 0.6),
+    rgb(23, 21, 13, 0.8)
+  );
+}
+fieldset {
+  border: none;
+}
+main section.sectionListCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgb(48, 46, 38, 0.6),
+    rgb(23, 21, 13, 0.8)
+  );
+}
+main section.sectionListCard h1 {
+  color: var(--H1COLOR);
+  width: 10rem;
+  text-align: center;
+}
+main section article.listCard ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+}
+main section article.listCard > ul > li {
+  background: linear-gradient(
+    to right,
+    rgb(48, 46, 38, 0.6),
+    rgb(23, 21, 13, 0.8)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid black;
+  width: 100%;
+  color: white;
+  padding: 1rem;
+}
+li {
+  list-style: none;
+}
+footer {
+  position: relative;
+}
+.going-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+  width: 2rem;
+  filter: invert(1);
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+article.listCard ul li p {
+  color: white;
+}
+article.listCard > ul li img {
+  height: auto;
+  width: 15rem;
+}
+article.listCard ul li h2,
+article.listCard ul li h3 {
+  color: #b8af95;
+  font-weight: bolder;
+}
+
+main section.singlepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(
+    to right,
+    rgb(48, 46, 38, 0.6),
+    rgb(23, 21, 13, 0.8)
+  );
+  min-height: 100%;
+}
+main section.singlepage h2,
+main section.singlepage h3 {
+  color: #b8af95;
+  font-weight: bolder;
+}
+main section.singlepage p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main section.singlepage article.resistance {
+  display: flex;
+  gap: 5rem;
+}
+main section.singlepage img {
+  height: 18rem;
+  width: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes loading {
+  0% {
+    opacity: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  12% {
+    opacity: 75%;
   }
+  24% {
+    opacity: 50%;
+  }
+  36% {
+    opacity: 25%;
+  }
+  48% {
+    opacity: 0%;
+  }
+  60% {
+    opacity: 0%;
+  }
+  72% {
+    opacity: 25%;
+  }
+  84% {
+    opacity: 50%;
+  }
+  96% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+#loading-logo {
+  animation: loading 1.7s infinite;
+  width: 50rem;
+  color: gold;
+}
+@media (max-width: 900px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  h1 {
+    color: #000;
+  }
+  header.header nav {
+    display: none;
+  }
+  header.header {
+    position: relative;
+  }
+  .toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background: url("../public/images/menu.png");
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1);
+  }
+  .toggle.active {
+    background-image: url("../public/images/close.png");
+
+    z-index: 10000;
+    filter: invert(1);
+  }
+  nav#navigation.active {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(48, 46, 38), rgb(23, 21, 13));
+  }
+
+  header nav li a {
+    font-size: 1.2rem;
+  }
+}
+button img {
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  z-index: 1000;
+  background: none;
 }
