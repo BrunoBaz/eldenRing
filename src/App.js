@@ -9,7 +9,6 @@ import { ClassesPage } from "./Pages/Classes/ClassesPage";
 import { MainPageList } from "./Pages/MainPageList";
 
 import { IncantationsPage } from "./Pages/Incantations/IncantationsPage";
-import { CreaturesPage } from "./Pages/Creatures/CreaturesPage";
 import { NotFoundPage } from "./Pages/NotFoundPage";
 import { ItemsPage } from "./Pages/Items/ItemsPage";
 import { AmmoComponent } from "./Components/Ammo/AmmoComponent";
@@ -18,7 +17,6 @@ import { GenericListCard } from "./Components/GenericListCard";
 import { AshesComponent } from "./Components/Ashes/AshesComponent";
 import { BossesComponent } from "./Components/Bosses/BossesComponent";
 import { ClassesComponent } from "./Components/Classes/ClassesComponent";
-import { CreaturesComponent } from "./Components/Creatures.js/CreaturesComponent";
 import { IncantationsComponent } from "./Components/Incantations/IncantationsComponent";
 import { ItemsComponent } from "./Components/Items/ItemsComponent";
 import { LocationsComponent } from "./Components/Locations/LocationsComponent";
@@ -36,13 +34,9 @@ import {
   useGetAllAshes,
   useGetAllBosses,
   useGetAllClasses,
-  useGetAllCreatures,
-  useGetAllIncantations,
   useGetAllItems,
   useGetAllLocations,
   useGetAllNPCs,
-  useGetAllShields,
-  useGetAllsorceries,
   useGetAllSpells,
   useGetAllSpirits,
   useGetAllTalismans,
@@ -52,6 +46,7 @@ import { WeaponsPage } from "./Pages/Weapons/WeaponsPage";
 import { SelectedListCard } from "./Components/SelectedListCard";
 import { WeaponsComponent } from "./Components/Weapons/WeaponsComponent";
 import { Footer } from "./Components/Footer";
+import { MainPage } from "./Pages/Main/MainPage";
 
 function App() {
   const { classesList, loadingClasses, errorClasses } = useGetAllClasses();
@@ -78,9 +73,9 @@ function App() {
 
       <main>
         <Routes>
-          {/*           <Route path="/" element="Esto es la Home" /> */}
+          <Route path="/" element={<MainPage />} />
           <Route
-            path="/"
+            path="/ammo"
             element={
               <MainPageList
                 title={"AMMO"}

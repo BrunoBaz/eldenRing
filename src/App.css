@@ -66,6 +66,16 @@ header.header nav a {
 fieldset {
   border: none;
 }
+section.mainpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.mainpage img {
+  width: 100vw;
+  height: auto;
+}
 main section.sectionListCard {
   display: flex;
   flex-direction: column;
@@ -239,6 +249,7 @@ main section.singlepage img {
     z-index: 10000;
     filter: invert(1);
   }
+
   nav#navigation.active {
     position: fixed;
     display: flex;
