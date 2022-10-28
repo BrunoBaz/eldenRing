@@ -30,11 +30,19 @@ export const Searcher = ({ element, setItem, setActive, active }) => {
     }
   };
   return (
-    <form onSubmit={handleSearch}>
+    <form onSubmit={handleSearch} id="buscador">
       <fieldset>
-        <label htmlFor="search">Buscar: </label>
+        <label htmlFor="search">SEARCH: </label>
         <input type="search" id="search" name="search" />
-        <button type="search">Buscar</button>
+        <button type="search">Search</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setItem([]);
+          }}
+        >
+          Reset
+        </button>
       </fieldset>
     </form>
   );

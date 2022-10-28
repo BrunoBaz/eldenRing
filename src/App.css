@@ -28,6 +28,10 @@ header.header h1 {
     opacity: 0;
   }
 }
+#buscador label {
+  color: #c7a232;
+  font-weight: bolder;
+}
 section.body-notfound {
   display: flex;
   flex-direction: column;

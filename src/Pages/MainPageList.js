@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Loading } from "../Components/Loading";
 import { Searcher } from "../Components/Searcher";
 
@@ -20,17 +20,22 @@ export const MainPageList = ({
         setItem={setItem}
         setActive={setActive}
         active={active}
-      />
-      {loading && <Loading />}
-      {!loading && !error && (
-        <ListCard
-          item={item}
-          dataList={allData}
-          PageComponent={PageComponent}
-          setActive={setActive}
-          active={active}
-        />
-      )}
+      />{" "}
+      <Suspense
+        fallback={
+          <img src="/images/logo.svg" alt="logo.svg" id="loading-logo" />
+        }
+      >
+        {!loading && !error && (
+          <ListCard
+            item={item}
+            dataList={allData}
+            PageComponent={PageComponent}
+            setActive={setActive}
+            active={active}
+          />
+        )}
+      </Suspense>
     </section>
   );
 };
